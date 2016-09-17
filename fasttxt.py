@@ -2,7 +2,7 @@ import fasttext
 import time
 
 def train(inp = "wiki.he.text",out_model = "wiki.he.fasttext.model",
-          alg = "cbow"):
+          alg = "skipgram"):
 
     print("Training Fasttext")
 
@@ -23,13 +23,10 @@ def train(inp = "wiki.he.text",out_model = "wiki.he.fasttext.model",
     model.save(out_model)
 
 
-def test(model = "wiki.he.fasttext.model"):
+def getModel(model = "wiki.he.fasttext.model.bin"):
 
     model = fasttext.load_model(model)
 
-    print model.words
-    # todo
+    return model
 
 
-
-train()
