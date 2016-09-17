@@ -3,7 +3,6 @@ import fasttxt
 import numpy as np
 from gensim.matutils import unitvec
 
-TRAIN = True
 
 def test(model,positive,negative,test_words):
 
@@ -17,31 +16,38 @@ def test(model,positive,negative,test_words):
     # compute the weighted average of all words
     mean = unitvec(np.array(mean).mean(axis=0))
 
+    scores = {}
     for word in test_words:
-        test_word = unitvec(np.array(model[word]))
 
-        # Cosine Similarity
-        print(np.dot(test_word, mean))
+        if word not in positive + negative:
+
+            test_word = unitvec(np.array(model[word]))
+
+            # Cosine Similarity
+            scores[word] = np.dot(test_word, mean)
+
+    print(sorted(scores, key=scores.get, reverse=True)[:1])
+
+TRAIN = False
 
 if TRAIN:
     print("Training Word2vec")
     word2vec.train()
 
-    print("Training fasttext")
+    print("Training Fasttext")
     fasttxt.train()
 
 
-positive_words = ["פריז","גרמניה"]#["מלכה","גבר"]
+positive_words = ["מלכה","גבר"]
 
-negative_words = ["צרפת"]#["מלך"]
-
-test_words = ["ברלין"]#["אישה"]
-
+negative_words = ["מלך"]
 
 # Test Word2vec
 print("Testing Word2vec")
-test(word2vec.getModel(),positive_words,negative_words,test_words)
+model = word2vec.getModel()
+test(model,positive_words,negative_words,model.vocab)
 
 # Test Fasttext
 print("Testing Fasttext")
-test(fasttxt.getModel(),positive_words,negative_words,test_words)
+model = fasttxt.getModel()
+test(model,positive_words,negative_words,model.words)

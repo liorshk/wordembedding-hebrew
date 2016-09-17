@@ -10,12 +10,17 @@ Word Embedding - Hebrew
 
 ####  Word2Vec
 - Train (inp = "wiki.he.text", out_model = "wiki.he.word2vec.model")
-- Test (model = "wiki.he.word2vec.model")
 
 ####  FastText
 > pip install fasttext
 
-- Train (inp = "wiki.he.text", out_model = "wiki.he.fasttext.model", alg = "cbow")
-- Test (model = "wiki.he.fasttext.model")
+- Train (inp = "wiki.he.text", out_model = "wiki.he.fasttext.model", alg = "skipgram")
 
+#### Test
+
+Testing specific analogies like:
+
+> פריז + גרמניה - צרפת = ברלין
+
+> גבר + מלכה - מלך = אישה
 
