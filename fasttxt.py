@@ -16,6 +16,8 @@ def train(inp = "wiki.he.text",out_model = "wiki.he.fasttext.model",
         print(model.words) # list of words in dictionary
 
     print(time.time()-start)
+          
+    model.save(out_model)
 
 
 
