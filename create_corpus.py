@@ -12,8 +12,8 @@ wiki = WikiCorpus(inp, lemmatize=False, dictionary={})
 for text in wiki.get_texts():
     article = space.join([t.decode("utf-8") for t in text])
 
-    output.write(article + "\n")
-    i = i + 1
+    output.write("{}\n".format(article.encode("utf-8")))
+    i += 1
     if (i % 1000 == 0):
         print("Saved " + str(i) + " articles")
 
