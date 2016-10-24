@@ -19,8 +19,8 @@ Word Embedding - Hebrew
     
 4. train the model: 
    from python prompt: 
-   import word2vec
-   word2vec.train()
+   - import word2vec
+   - word2vec.train()
    
 5. explore model using jupyter notebook. You can use the supplied playingWithHebModel.ipynb example as
    a starting point.
