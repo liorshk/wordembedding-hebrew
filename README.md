@@ -8,7 +8,9 @@ Word Embedding - Hebrew
 1. Download hebrew dataset from wikipedia
    - Go to: https://dumps.wikimedia.org/hewiki/latest/
    - Download `hewiki-latest-pages-articles.xml.bz2`
+   
    In linux this can be easily done using: 
+   
    wget https://dumps.wikimedia.org/hewiki/latest/hewiki-latest-pages-articles.xml.bz2
 
 2. `pip install --upgrade gensim` (https://radimrehurek.com/gensim/install.html)
