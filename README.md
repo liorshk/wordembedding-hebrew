@@ -1,5 +1,5 @@
 Word Embedding - Hebrew
-============================
+------------------***********************************-----------------------------------------------------------
 
 #### The Code for https://www.oreilly.com/learning/capturing-semantic-meanings-using-deep-learning
 
@@ -24,7 +24,7 @@ Word Embedding - Hebrew
    
 5. explore model using jupyter notebook. You can use the supplied playingWithHebModel.ipynb example as
    a starting point.
-
+---------------------------***********************-------------------------------------------------------------
 
 ####  Word2Vec
 - Train (inp = "wiki.he.text", out_model = "wiki.he.word2vec.model")
@@ -41,4 +41,4 @@ Testing specific Hebrew analogies like:
 > פריז + גרמניה - צרפת = ברלין
 
 > גבר + מלכה - מלך = אישה
-
+----------------------------------------*************************************----------------------------------------
